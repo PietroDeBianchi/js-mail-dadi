@@ -1,8 +1,12 @@
-let playerScore = 0;
-let computerScore = 0;
 let rollResult;
 let pcRollResult;
+const playButton = document.getElementById('playBtn');
+const gameResult = document.getElementById('gameResult');
 
+playButton.addEventListener('click', () => {
+// reset everytime i push the btn
+let playerScore = 0;
+let computerScore = 0;
 // Function to play a turn for the player
 function playerTurn() {
   const roll = Math.floor((Math.random() * 6) + 1);
@@ -29,10 +33,10 @@ pcTurn();
 
 // Determine the winner
 if (rollResult > pcRollResult) {
-  console.log(`Congratulations, you won with a score of ${playerScore}!`);
+    gameResult.textContent =  `Congratulations, you won with a score of ${playerScore}.`;
 } else if (pcRollResult > rollResult) {
-  console.log(`Sorry, the computer won with a score of ${computerScore}.`);
+    gameResult.textContent = `Sorry, the computer won with a score of ${computerScore}.`;
 } else {
-  console.log(`It's a tie! Both players scored ${playerScore}.`);
+    gameResult.textContent = `It's a tie! Both players scored ${playerScore}.`;
 }
-
+});
