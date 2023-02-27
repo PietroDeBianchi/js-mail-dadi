@@ -2,9 +2,8 @@ let rollResult;
 let pcRollResult;
 const playButton = document.getElementById('playBtn');
 const gameResult = document.getElementById('gameResult');
-
 playButton.addEventListener('click', () => {
-// reset everytime i push the btn
+// inside because reset everytime i push the btn
 let playerScore = 0;
 let computerScore = 0;
 // Function to play a turn for the player
