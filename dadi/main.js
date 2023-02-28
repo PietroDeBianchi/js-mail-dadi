@@ -1,11 +1,16 @@
+// create main let and link const to html elements
 let rollResult;
 let pcRollResult;
 const playButton = document.getElementById('playBtn');
 const gameResult = document.getElementById('gameResult');
+
+// event listner click for the button
 playButton.addEventListener('click', () => {
-// inside because reset everytime i push the btn
+
+// inside because reset the score everytime i push the btn
 let playerScore = 0;
 let computerScore = 0;
+
 // Function to play a turn for the player
 function playerTurn() {
   const roll = Math.floor((Math.random() * 6) + 1);
@@ -32,10 +37,10 @@ pcTurn();
 
 // Determine the winner
 if (rollResult > pcRollResult) {
-    gameResult.textContent =  `Congratulations, you won with a score of ${playerScore}.`;
+    gameResult.textContent =  `Congratulations, you won!`;
 } else if (pcRollResult > rollResult) {
-    gameResult.textContent = `Sorry, the computer won with a score of ${computerScore}.`;
+    gameResult.textContent = `Sorry, the computer won!`;
 } else {
-    gameResult.textContent = `It's a tie! Both players scored ${playerScore}.`;
+    gameResult.textContent = `It's a tie!`;
 }
 });
